@@ -1,5 +1,8 @@
 # Bring your Dotfiles to Gitpod
 
+## using dotfiles-sync
+[README](./README.dotfiles-sync.md)
+
 Ever wondered how you can bring your personal dotfiles configurations to [Gitpod](https://www.gitpod.io/) to have your personalized ephemeral developer environments in the cloud? Here's how...
 
 ## How Does this Repo. Works?
