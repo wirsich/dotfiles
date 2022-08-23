@@ -8,7 +8,7 @@ export ZSH="/Users/wirsich/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="zhann"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -21,7 +21,7 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -30,7 +30,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=3
+export UPDATE_ZSH_DAYS=4
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -42,13 +42,14 @@ export UPDATE_ZSH_DAYS=3
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="%F{yellow}loading ...%f"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -74,31 +75,37 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   alias-finder
   aliases
-  brew
   battery
   branch
   chucknorris
   colored-man-pages
+  command-not-found
   common-aliases
   cp
   dircycle
+  direnv
   dirhistory
   docker
   docker-compose
   docker-machine
   doctl
+  dotenv
   fd
   fzf
   gatsby
   gcloud
-  git
   gh
+  git
+  git-hubflow
+  gitfast
   gitignore
   iterm2
+  jsontools
   keychain
   kubectl
   kubectx
   lighthouse
+  macos
   man
   nmap
   node
@@ -113,6 +120,7 @@ plugins=(
   yarn
   zbell
   zsh-interactive-cd
+  zsh-navigation-tools
 )
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
@@ -154,8 +162,20 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# @TODO use zsh_alias and import
+
 alias tree="tree -C -a"
-alias chore="npm run chore"
+alias tree2="tree -C -a -L2"
+alias treeI="tree -C -a -I .git"
+alias treeF="watch -c -x tree -C -a"
+
+alias Nci="npm run ci"
+alias Nformat="npm run format"
+alias Nchore="npm run chore"
+
+alias gchore="git status; git add -A; git commit -am'chore: apply minor changes'; git pull; git push; git status;"
+alias gst="git status;"
+alias gadd="git add -A;"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -165,6 +185,7 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 # bit
 export PATH="$PATH:/Users/wirsich/bin"
+# export PATH=$PATH:$(go env GOPATH)/bin
 # bit endexport PATH="/usr/local/opt/openjdk/bin:$PATH"
 #compdef bit
 ###-begin-bit-completions-###
@@ -188,3 +209,6 @@ compdef _bit_yargs_completions bit
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export PATH=/Users/wirsich/Library/pnpm:/Users/wirsich/.nvm/versions/node/v16.16.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Library/Apple/usr/bin:/Users/wirsich/.local/bin:/Users/wirsich/.yarn/bin:/Users/wirsich/bin:/Users/wirsich/Library/pnpm/nodejs/16.17.0/bin
