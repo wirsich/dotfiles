@@ -9,5 +9,7 @@ alias Nchore="npm run chore"
 
 alias gchore="git status; git add -A; git commit -am'chore: apply minor changes'; git pull; git push; git status;"
 alias gst="git status;"
-alias gadd="git add -A;git status;"
+alias gadd="git add -A;g it status;"
 alias gm="git commit -am'$@'"
+alias gTheirs="git pull -X theirs"
+alias gOurs="git pull -X ours"

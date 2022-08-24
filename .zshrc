@@ -162,20 +162,7 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# @TODO use zsh_alias and import
-
-alias tree="tree -C -a"
-alias tree2="tree -C -a -L2"
-alias treeI="tree -C -a -I .git"
-alias treeF="watch -c -x tree -C -a"
-
-alias Nci="npm run ci"
-alias Nformat="npm run format"
-alias Nchore="npm run chore"
-
-alias gchore="git status; git add -A; git commit -am'chore: apply minor changes'; git pull; git push; git status;"
-alias gst="git status;"
-alias gadd="git add -A;"
+source ~/.bash_aliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -211,4 +198,3 @@ compdef _bit_yargs_completions bit
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
