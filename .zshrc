@@ -162,7 +162,20 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source ~/.bash_aliases
+# @TODO use zsh_alias and import
+
+alias tree="tree -C -a"
+alias tree2="tree -C -a -L2"
+alias treeI="tree -C -a -I .git"
+alias treeF="watch -c -x tree -C -a"
+
+alias Nci="npm run ci"
+alias Nformat="npm run format"
+alias Nchore="npm run chore"
+
+alias gchore="git status; git add -A; git commit -am'chore: apply minor changes'; git pull; git push; git status;"
+alias gst="git status;"
+alias gadd="git add -A;"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -198,4 +211,4 @@ compdef _bit_yargs_completions bit
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-export PATH=/Users/wirsich/Library/pnpm:/Users/wirsich/.nvm/versions/node/v16.16.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Library/Apple/usr/bin:/Users/wirsich/.local/bin:/Users/wirsich/.yarn/bin:/Users/wirsich/bin:/Users/wirsich/Library/pnpm/nodejs/16.17.0/bin
+
