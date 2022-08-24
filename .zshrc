@@ -42,7 +42,7 @@ export UPDATE_ZSH_DAYS=4
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -141,7 +141,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -162,21 +162,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# @TODO use zsh_alias and import
-
-alias tree="tree -C -a"
-alias tree2="tree -C -a -L 2"
-alias treeI="tree -C -a -I .git"
-alias treeF="watch -c -x tree -C -a"
-
-alias Nci="npm run ci"
-alias Nformat="npm run format"
-alias Nchore="npm run chore"
-
-alias gchore="git status; git add -A; git commit -am'chore: apply minor changes'; git pull; git push; git status;"
-alias gst="git status;"
-alias gadd="git add -A;"
-alias gm="git commit -am"
+source ~/.bash_aliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
