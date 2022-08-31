@@ -11,5 +11,5 @@ alias gchore="git status; git add -A; git commit -am'chore: apply minor changes'
 alias gst="git status;"
 alias gadd="git add -A;g it status;"
 alias gm="git commit -am'$@'"
-alias gTheirs="git pull -X theirs"
-alias gOurs="git pull -X ours"
+
+alias l="ls -a"
