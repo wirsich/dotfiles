@@ -11,5 +11,12 @@ alias gchore="git status; git add -A; git commit -am'chore: apply minor changes'
 alias gst="git status;"
 alias gadd="git add -A;g it status;"
 alias gm="git commit -am'$@'"
+<<<<<<< HEAD
 
 alias l="ls -a"
+=======
+alias gTheirs="git pull -X theirs"
+alias gOurs="git pull -X ours"
+
+alias readMail="bat /var/mail/*"
+>>>>>>> dcab087 (added aliases)
