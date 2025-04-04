@@ -42,3 +42,12 @@ Here are some example `dotfiles` which you can refer:
 
 - [webpro/awesome-dotfiles](https://github.com/webpro/awesome-dotfiles)
 - [holman/dotfiles](https://github.com/holman/dotfiles)
+
+
+
+## Linklist
+
+### iterm2
+- https://apple.stackexchange.com/questions/136928/using-alt-cmd-right-left-arrow-in-iterm
+- https://medium.com/airfrance-klm/beautify-your-iterm2-and-prompt-40f148761a49
+- https://github.com/chimurai/dotfiles
